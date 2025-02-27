@@ -40,20 +40,29 @@ h1{
     text-align: center;
 }
 
-.signbtn{
+.signbtn {
     font-size: 20px;
-    color:rgb(34, 35, 36);
-    border-color:solid rgb(33, 20, 3);
-    border-radius : 10px;
-    padding : 5px 10px;
-    margin :auto;
-    background-color: #333;
+    color: hsl(220, 10%, 6%);
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 5px 15px;
+    margin: auto;
+    background-color: #f8f9fa;
     transition: 0.3s;
-    text-decoration: #3498db;
+    text-decoration: none;
     margin-left: 10px;
+    border-radius: 25px;
 }
-.signbtn:hover{
-    background-color:hsla(60, 2%, 57%, 0.637);
+
+.signbtn a {
+    text-decoration: none;
+    color: #2e3237;
+    font-weight: bold;
+}
+
+.signbtn:hover {
+    background-color: hsl(0, 10%, 75%);
+    color: white;
 }
 
 .thin-header {
@@ -82,49 +91,6 @@ body {
     image-rendering: crisp-edges; /* Improves image sharpness */
 }
 
-
-
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-button {
-    background-color: #068de7;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    border-radius: 7px;
-}
-.dropdown-button:hover {
-    background-color: #526fe1;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: rgb(158, 150, 150);
-    min-width: 160px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 1;
-}
-
-.dropdown-content a {
-    color: rgb(24, 24, 24);
-    padding: 8px 12px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #e3dbdb;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
 #signinForm>h2{
     text-align: center;
     font-size: 50px;
@@ -147,26 +113,6 @@ body {
     border: 3px solid hsl(0, 0%, 0%);
     border-radius: 2px;
     box-shadow: 2px 2px 10px hsl(0, 1%, 14%);
-}
-#s1{
-    margin: 10px; 
-    padding: 5px 15px;
-    font-size: 20px;
-    background-color: hsla(0, 0%, 0%, 0);
-    border: 2px solid black;
-    border-radius: 3px;
-    box-shadow: 2px 2px 10px hsl(0, 1%, 14%);
-    color: hsl(0, 0%, 0%);
-}
-#r1{
-    margin: 10px; 
-    padding: 5px 15px;
-    font-size: 20px;
-    background-color: hsla(0, 0%, 100%, 0);
-    border: 2px solid black;
-    border-radius: 3px;
-    box-shadow: 2px 2px 10px hsl(0, 0%, 7%);
-    color: hsl(0, 0%, 0%);
 }
 
 .header {
@@ -196,15 +142,16 @@ body {
 .weatherForm{
     margin : 20px;
 }
-.cityInput{
-    padding: 10px;
-    font-size: 1rem;
+.cityInput {
+    padding: 5px 2px 5px 5px;
+    font-size: 0.8rem;
     font-weight: bold;
     border: 2px solid hsl(0, 0%, 50%);
-    border-radius:15px;
-    margin: 10px;
-    width: 250px;
+    border-radius: 10px;
+    margin: 5px;
+    width: 180px;
 }
+
 
 button[type="submit"]{
     padding: 10px 20px;
@@ -286,7 +233,7 @@ p{
 #pac-input {
     margin-top: 10px;
     width: 300px;
-    padding: 5px;
+    padding: 15px 5px;
     font-size: 14px;
     border-radius: 25px;
 }
@@ -356,3 +303,111 @@ p{
     background-color: #0056b3;
 }
 
+.sign {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signin-container {
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 350px;
+}
+
+h2 {
+    font-size: 50px; /* Increase text size */
+    font-weight: bold; /* Make it bold */
+    text-align: center; /* Center it horizontally */
+    position: absolute;
+    top: 20px; /* Adjust top position */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+#password{
+    background-color: hsla(0, 0%, 0%, 0.103);
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px hsl(0, 1%, 28%);
+}
+#email{
+    background-color: hsla(0, 0%, 0%, 0.103);
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px hsl(0, 1%, 28%);
+}
+#name{
+    background-color: hsla(0, 0%, 0%, 0.103);
+    border: 1px solid hsl(0, 0%, 0%);
+    border-radius: 2px;
+    box-shadow: 2px 2px 5px hsl(0, 1%, 28%);
+}
+button[type="submit"]{
+    padding: 10px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: hsl(130, 100%, 35%);
+    color: white;
+    border: none;
+    border-radius:15px;
+    cursor:pointer;
+    box-shadow: 2px 2px 5px hsl(0, 1%, 28%);
+
+}
+.logout{
+    font-size: 18px;
+    background-color: #b12d3a;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-left: 15px;
+}
+.logout:hover {
+    background-color: #da2739;
+}

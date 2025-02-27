@@ -100,3 +100,33 @@ document.getElementById("send-btn").addEventListener("click", async () => {
     let data = await response.json();
     alert("AI Response: " + data.reply);
 });
+
+
+async function getAIResponse(userInput) {
+    const apiKey = "ZwjmCoxKTQiM2uBFKjHIOqlPHiBrdQ9TsEPO9dfyz1_VUyh01ngaYrT3BlbkFJUaaNF8ChCWbdRZ7DAlZ0SAdvUQGuuxivrDSk7AojtIyUnLTtfuNcK_C3YKRmy3NAWE813YzNIA";
+
+    try {
+        const response = await fetch("https://api.openai.com/v1/chat/completions", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${apiKey}`
+            },
+            body: JSON.stringify({
+                model: "gpt-4",
+                messages: [{ role: "user", content: userInput }],
+                temperature: 0.7
+            })
+        });
+
+        if (!response.ok) {
+            throw new Error(`API Error: ${response.status} ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data.choices[0].message.content;
+    } catch (error) {
+        console.error("Error fetching AI response:", error);
+        return "Sorry, I couldn't process your request.";
+    }
+}

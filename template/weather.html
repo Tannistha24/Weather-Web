@@ -12,7 +12,15 @@
     <h2>Weather Forecast</h2> <br><br>   
 
     <div class="header">
-        <button class="signbtn" id="sign"><a href="sign.html" target="_blank">Sign In</a></button><br><br>
+        {% if user %}
+        <p>Welcome, <strong>{{ user }}</strong>!</p>
+        <a href="{{ url_for('logout') }}" class="logout">Logout</a>
+         {% else %}
+        <button class="signbtn">
+            <a href="{{ url_for('sign') }}">Sign In</a>
+        </button>
+        {% endif %}
+      
         <p id="transcript"></p>
 
         <div class="search-container">
@@ -21,31 +29,36 @@
                 <button type="submit">Get Weather</button>
             </form>
         </div>  
-    </div>
+    
 
+      
+
+      
+          <input id="pac-input" type="text" placeholder="Search for a place">
+
+           <div class="chat-container">
+               <input type="text" id="chat-input" placeholder="Ask me anything...">
+               <button id="send-btn">Send</button>
+                <button id="voice-btn">🎤 Speak</button>
+            </div>
+        </div>
+    </div>
     <div id="weather-info" style="display:none">
         <h3>Weather Details:</h3>
-        <p id="temperature"></p>
-        <p id="humidity"></p>
-        <p id="description"></p>
-        <p id="weather-emoji"></p>
-    </div>
+          <p id="temperature"></p>
+          <p id="humidity"></p>
+           <p id="description"></p>
+           <p id="weather-emoji"></p>
+       </div>
 
     <div id="weather-display" style="display:none">
         <h3>Temperature Forecast Graph:</h3>
-        <img id="weatherGraph" src="" alt="Weather Graph">
-    </div>
-
+         <img id="weatherGraph" src="" alt="Weather Graph">
+     </div>
     <div id="map" style="height: 500px; width: 100%;"></div>
-    <input id="pac-input" type="text" placeholder="Search for a place">
-
-    <div class="chat-container">
-        <input type="text" id="chat-input" placeholder="Ask me anything...">
-        <button id="send-btn">Send</button>
-        <button id="voice-btn">🎤 Speak</button>
-    </div>
 
     <script src="{{ url_for('static', filename='weather.js') }}"></script>
+    
     
     <!-- Go Maps Pro API Integration -->
     <script async defer src="https://maps.gomaps.pro/maps/api/js?key=AlzaSynt8bt46uTM-rpjxmrvH8P_uEVr_xYW1nD&libraries=geometry,places&callback=initMap"></script>
